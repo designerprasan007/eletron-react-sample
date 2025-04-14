@@ -2,6 +2,7 @@
   "name": "react-electron-sample",
   "version": "0.1.0",
   "private": true,
+  "main": "main.js",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
@@ -14,9 +15,18 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "electron": "electron .",
+    "dist": "electron-builder",
+    "main": "main.js",
+    "build": {
+      "appId": "com.example.myapp",
+      "productName": "My Electron App",
+      "directories": {
+        "output": "dist"
+      }
+    }
   },
   "eslintConfig": {
     "extends": [
@@ -35,5 +45,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "electron": "^35.1.5",
+    "electron-builder": "^26.0.12"
   }
 }
